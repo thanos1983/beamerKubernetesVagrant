@@ -3,6 +3,7 @@
 %\usepackage{pgfpages} %For handouts.
 % This is the file main.tex
 % \usepackage{handoutWithNotes}
+% \usepackage{subcaption} % subfigure
 \usepackage{graphicx}
 \usepackage[en-US]{datetime2} % fix warning of \author[*]{\today}
 \usepackage{lmodern}% http://ctan.org/pkg/lm (For special Fonts)
@@ -30,32 +31,32 @@
 
 \title{Kubernetes Vagrant CI / CD} % (optional, only for long titles)
 \subtitle{
-  \href{https://github.com/thanos1983/kubernetesVagrant}
-    {GitHub Project Repo: kubernetesVagrant} }
+	\href{https://github.com/thanos1983/kubernetesVagrant}
+    		{GitHub Project Repo: kubernetesVagrant}
+}
 \author[Athanasios Garyfalos]{Sample of Work of fully automate build, deploy, validate containers locally. Deploy on a k8s cluster and validations.} % (optional, for multiple authors)
 % {A.~Garyfalos \and A.~Garyfalos2 \and A.~Garyfalos3}
 \institute[garyfalos@cpan.org] % (optional)
 {
-\\
-\medskip
-{
-% \emph{A.atga12@student.bth.se}
-% \emph{Another Author email}
-% \emph{Another Author}
-}
+	\\
+	\medskip
+	{
+	% \emph{A.atga12@student.bth.se}
+	% \emph{Another Author email}
+	% \emph{Another Author}
+	}
 }
 % \vspace*{-11.5em}
 % \date{Date: \today}
 % \subject{Sample of Work Demonstration Django Rest Framework}
 
 \begin{document}
-
-\input{./title/title.tex}
-% \include{./copyRightDisclaimer/copyRightDisclaimer}
-% \include{./contents/contents}
-% \include{./introduction/introduction}
-% \include{./project_description/project_description}
-% \include{./project_implementation/project_implementation}
-% \include{./summary/summary}
-% \include{./bibliography/bibliography}
+	\input{./title/title.tex}
+	% \include{./copyRightDisclaimer/copyRightDisclaimer}
+	\include{./contents/contents}
+	\include{./introduction/introduction}
+	\include{./project_description/project_description}
+	% \include{./project_implementation/project_implementation}
+	% \include{./summary/summary}
+	\include{./bibliography/bibliography}
 \end{document}

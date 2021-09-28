@@ -42,3 +42,6 @@ tags
 *.mtc1
 *.out
 *.synctex.gz
+
+# Ignore Visual Studio files
+.DS_Store

@@ -41,6 +41,10 @@ tags
 *.mtc
 *.mtc1
 *.out
+*.nav
+*.snm
+*.fls
+*.fdb_latexmk
 *.synctex.gz
 
 # Ignore Visual Studio files

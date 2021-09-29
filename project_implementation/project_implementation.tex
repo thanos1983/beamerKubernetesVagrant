@@ -1,87 +1,96 @@
 \section{Implementation} \label{sec:implementation}
-\subsection{Neural Network Algorithm Implementation}
+\subsection{CI / CD Flow Build / Deploy / Test}
 
-\begin{frame}
-\begin{tikzpicture}[node distance=2cm]
-\node (start) [startstop] {Start};
-\node (in1) [io, below of=start] {Input};
-\node (pro1) [process, below of=in1] {Process 1};
-\node (dec1) [decision, below of=pro1] {Decision 1};
-\node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
-\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a};
-\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
-\node (out1) [io, below of=pro2a] {Output};
-\node (stop) [startstop, below of=out1] {Stop};
-\draw [arrow] (start) -- (in1);
-\draw [arrow] (in1) -- (pro1);
-\draw [arrow] (pro1) -- (dec1);
-\draw [arrow] (dec1) -- (pro2a);
-\draw [arrow] (dec1) -- (pro2b);
-\draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
-\draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
-\draw [arrow] (pro2b) -- (pro1);
-\draw [arrow] (pro2a) -- (out1);
-\draw [arrow] (out1) -- (stop);
-\draw [arrow] (pro2b) |- (pro1);
-\end{tikzpicture}
+\begin{frame}{Local Procedure}
+\setbeamercovered{dynamic}%Makes the text appear before it presents nice!!!!
+	\begin{columns}[T] % contents are top vertically aligned
+		\begin{column}{5cm} % each column can also be its own environment
+			\resizebox{5cm}{!}{%
+				\smartdiagramset{set color list={blue!40!yellow,
+										blue!40!orange,
+										blue!40!red,
+										blue!40!purple,
+										blue!40!gray
+										},
+				}
+				\tikzset{priority arrow/.append style={rotate=180,
+											anchor=0,
+											xshift=30
+											}
+				}
+				\smartdiagram[priority descriptive diagram]{Stop Clean up,
+													Deploy with volumes / ports - Validation tests,
+													Build / Push Image - Cleanup volumes / networks,
+													Login Docker Registry - Vault (https) with encrypted credentials,
+													Prepare Dockerfile with parameters
+												}
+			}%
+		\end{column}
+		\begin{column}{5cm} % alternative top-align that's better for graphics
+			\begin{itemize}
+				\item<+-| alert@+> Dockerfile (template).
+				\item<+-| alert@+> Vault (https).
+				\item<+-| alert@+> Any socket.
+					\begin{itemize}
+						\item<+-| alert@+> Azzure Registry.
+						\item<+-| alert@+> Build Dockerfile.
+						\item<+-| alert@+> Push Image.
+						\item<+-| alert@+> Logout Azzure.
+						\item<+-| alert@+> Prune everything.
+						\item<+-| alert@+> Raise error (if).
+					\end{itemize}
+				\item<+-| alert@+> Deployment (volume).
+				\item<+-| alert@+> Validation (tests).
+				\item<+-| alert@+> Stop, Cleanup.
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
-\begin{frame}
-\smartdiagram[priority descriptive diagram]{
-  Develop a document structure,
-  Choose a document class,
-  Select suitable packages,
-  Setup the document preamble,
-  Write your document,
-  Finetune the layout}
-\end{frame}
+\subsection{CI / CD Flow Kubernetes}
 
-\begin{frame}
-\begin{center}
-\smartdiagram[bubble diagram]{
-Build a program,1,2,3,Modify~/\\ Add,5, 6,7
-}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\smartdiagramset{set color list={blue!40!yellow, blue!40!orange, blue!40!red, blue!40!purple, blue!40!gray}}
-\tikzset{priority arrow/.append style={rotate=180,anchor=0,xshift=30,}}
-\smartdiagram[priority descriptive diagram]{yellow, orange, red, purple, blue}
-\end{frame}
-
-\begin{frame}
-\begin{columns}[T] % align columns
-\begin{column}{.48\textwidth}
-\color{red}\rule{\linewidth}{4pt}
-\smartdiagramset{set color list={blue!40!yellow, blue!40!orange, blue!40!red, blue!40!purple, blue!40!gray}}
-\tikzset{priority arrow/.append style={rotate=180,anchor=0,xshift=30,}}
-\smartdiagram[priority descriptive diagram]{yellow, orange, red, purple, blue}
-\end{column}%
-\hfill%
-\begin{column}{.48\textwidth}
-\color{blue}\rule{\linewidth}{4pt}
-
-\smartdiagramset{set color list={blue!40!yellow, blue!40!orange, blue!40!red, blue!40!purple, blue!40!gray}}
-\tikzset{priority arrow/.append style={rotate=180,anchor=0,xshift=30,}}
-\smartdiagram[priority descriptive diagram]{yellow, orange, red, purple, blue}
-\end{column}%
-\end{columns}
-\end{frame}
-
-\begin{frame}{The minipage environment}
-\begin{minipage}{0.47\textwidth}
-    \begin{itemize}
-        \item First item
-        \item Second item
-        \item Third item
-    \end{itemize}
-\end{minipage}
-\resizebox{5.0cm}{!}{%
-    \smartdiagramset{set color list={blue!40!yellow, blue!40!orange, blue!40!red, blue!40!purple, blue!40!gray}}
-\tikzset{priority arrow/.append style={rotate=180,anchor=0,xshift=30,}}
-\smartdiagram[priority descriptive diagram]{yellow, orange, red, purple, blue}
-}%
+\begin{frame}{Local k8s Deployment Procedure}
+\setbeamercovered{dynamic}%Makes the text appear before it presents nice!!!!
+	\begin{columns}[T] % contents are top vertically aligned
+		\begin{column}{5cm} % each column can also be its own environment
+			\resizebox{5cm}{!}{%
+				\smartdiagramset{set color list={blue!40!yellow,
+										blue!40!orange,
+										blue!40!red,
+										blue!40!purple
+										},
+				}
+				\tikzset{priority arrow/.append style={rotate=180,
+											anchor=0,
+											xshift=30
+											}
+				}
+				\smartdiagram[priority descriptive diagram]{Stop Clean up / Roll Back,
+													Validation tests,
+													Pull Image / Deploy with volumes / services etc ,
+													Login Docker Registry - Vault (https) with encrypted credentials
+												}
+			}%
+		\end{column}
+		\begin{column}{5cm} % alternative top-align that's better for graphics
+			\begin{itemize}
+				\item<+-| alert@+> Vault (https).
+				\item<+-| alert@+> Any socket.
+					\begin{itemize}
+						\item<+-| alert@+> Azzure Registry.
+						\item<+-| alert@+> Pull Image.
+					\end{itemize}
+				\item<+-| alert@+> Deployment (volume).
+				\item<+-| alert@+> Logout Azzure.
+				\item<+-| alert@+> Validation (tests).
+					\begin{itemize}
+						\item<+-| alert@+>Raise error (if).
+						\item<+-| alert@+> Stop, Cleanup.
+						\item<+-| alert@+> Roll back.
+					\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 % \begin{frame}

@@ -45,6 +45,7 @@ tags
 *.snm
 *.fls
 *.fdb_latexmk
+*.vrb
 *.synctex.gz
 
 # Ignore Visual Studio files

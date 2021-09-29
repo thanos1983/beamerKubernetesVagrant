@@ -1,0 +1,81 @@
+\section{Architecture} \label{sec:architecture}
+\subsection{Minimal Kubernetes Components}
+
+\begin{frame}{Kubernetes Minimal Core Components}
+\setbeamercovered{dynamic}%Makes the text appear before it presents nice!!!!
+	\begin{columns}[T] % contents are top vertically aligned
+		\begin{column}{5cm} % each column can also be its own environment
+			\resizebox{5cm}{!}{%
+					\smartdiagramset{set color list={orange!60,
+											green!50!lime!60,
+											magenta!60
+											},
+											uniform connection color=true
+					}
+					\smartdiagram[constellation diagram]{k8s,
+												Socket(s),
+												Main\\Packages,
+												Network\\Elements
+					}
+			}%
+		\end{column}
+		\begin{column}{5cm} % alternative top-align that's better for graphics
+			\begin{itemize}
+				\item<+-| alert@+> Socket:
+				\begin{itemize}
+						\item<+-| alert@+> Containerd (Docker)
+						\item<+-| alert@+> CRI-O
+					\end{itemize}
+				\item<+-| alert@+> Main Packages:
+				\begin{itemize}
+					\item<+-| alert@+> kubeadm
+					\item<+-| alert@+> kubelet
+					\item<+-| alert@+> kubectl
+				\end{itemize}
+				\item<+-| alert@+> Network Elements
+					\begin{itemize}
+						\item<+-| alert@+> Calico
+						\item<+-| alert@+> WeaveNet
+						\item<+-| alert@+> Cilium
+					\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{My view of Kubernetes Minimal Core Components}
+
+\begin{frame}{Local Auto Deployment}
+\setbeamercovered{dynamic}%Makes the text appear before it presents nice!!!!
+	\begin{columns}[T] % contents are top vertically aligned
+		\begin{column}{5cm} % alternative top-align that's better for graphics
+			\begin{itemize}
+				\item<+-| alert@+> Previous Elements
+				\item<+-| alert@+> Ingress Controller:
+					\begin{itemize}
+						\item<+-| alert@+> NGINX
+						\item<+-| alert@+> HaProxy
+					\end{itemize}
+				\item<+-| alert@+> Metrics (HPA)
+				\item<+-| alert@+> Dashboard
+					\begin{itemize}
+						\item<+-| alert@+> Self Signed CA
+					\end{itemize}
+				\item<+-| alert@+> Serveless Functions, Functions as a Service (FaaS)
+			\end{itemize}
+		\end{column}
+		\begin{column}{5cm} % each column can also be its own environment
+			\resizebox{5cm}{!}{%
+					\smartdiagram[constellation diagram]{k8s,
+												Socket(s),
+												Main\\Packages,
+												Network\\Elements,
+												Ingress\\Controller,
+												Dashboard,
+												Metrics,
+												Serverless\\Functions
+					}
+			}%
+		\end{column}
+	\end{columns}
+\end{frame}

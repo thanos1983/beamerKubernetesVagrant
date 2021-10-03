@@ -13,6 +13,7 @@
 \usepackage{smartdiagram}
 \usepackage{xcolor}
 % \usepackage{subfig}
+\usepackage{multicol}
 
 \mode<presentation>
 \setbeamertemplate{blocks}[rounded][shadow=true]
@@ -49,9 +50,24 @@
 	% \emph{Another Author}
 	}
 }
-% \vspace*{-11.5em}
-% \date{Date: \today}
+\vspace*{-0.5cm}
+% \date{Date: \today} % Multi page content
 % \subject{Sample of Work Demonstration Django Rest Framework}
+
+% \AtBeginSection[]{
+%  \begin{frame}
+%    \frametitle{Table of Contents}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+% }
+
+\AtBeginSubsection[]{
+  \begin{frame}<beamer>
+    \begin{multicols}{2}
+      \tableofcontents[currentsection,hideothersubsections]
+    \end{multicols}
+  \end{frame}
+}
 
 \begin{document}
 	\input{./title/title.tex}

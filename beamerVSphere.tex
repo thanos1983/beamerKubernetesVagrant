@@ -9,11 +9,10 @@
 \usepackage[en-US]{datetime2} % fix warning of \author[*]{\today}
 \usepackage{lmodern}% http://ctan.org/pkg/lm (For special Fonts)
 \usepackage{ragged2e} % justify document
-\usepackage{tikz}
 \usepackage{smartdiagram}
 \usepackage{xcolor}
-% \usepackage{subfig}
 \usepackage{multicol}
+\usepackage{capt-of} % captions of images in columns
 
 \mode<presentation>
 \setbeamertemplate{blocks}[rounded][shadow=true]
@@ -22,7 +21,6 @@
 \setbeamertemplate{navigation symbols}{} % take out the navigation symbols
 \setbeamertemplate{caption}[numbered] % enumerate the caption and tables
 \usefonttheme[stillsansseriflarge]{structureitalicserif}
-\usepackage{capt-of} % captions of images in columns
 
 %\mode<handout>{\setbeamercolor{background canvas}{bg=black!5}} %For handouts.
 % \pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
@@ -35,10 +33,10 @@
 %\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{SMS}
 
 \title{Provisioning VMware through terraform} % (optional, only for long titles)
-\subtitle{
-    \href{https://github.com/thanos1983/pocVSphere}
-    {GitHub Project Repo: pocVSphere}
-}
+%\subtitle{
+%    \href{https://github.com/thanos1983/pocVSphere}
+%    {GitHub Project Repo: pocVSphere}
+%}
 
 \author[Athanasios Garyfalos]{Sample of work on how to provision VMs (Linux or Windows) on VMware through Terraform. \vspace{-.5cm}} % (optional, for multiple authors)
 % {A.~Garyfalos \and A.~Garyfalos2 \and A.~Garyfalos3}

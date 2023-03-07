@@ -1,0 +1,58 @@
+\section{Introduction}\label{sec:introduction}
+
+\subsection{High Level Designs}\label{subsec:high-level-designs}
+
+\begin{frame}{High Level Desighn Infrastructure}
+    \setbeamercovered{dynamic}%Makes the text appear before it presents nice!!!!
+    \vspace*{.5cm}
+    \begin{itemize}
+        \only<1> {
+            \vfill \item<1-| alert@1> Git / Azure DevOps VCS (where all code is stored)
+        }
+        \only<2> {
+            \vfill \item<2-| alert@2> Azure DevOps Server (triggerring infrastructure pipeline)
+        }
+        \only<3> {
+            \vfill \item<3-| alert@3> Ansible (infrastructure provisioning tool and configurations)
+        }
+        \only<4> {
+            \vfill \item<4-| alert@4> Docker (containerization tool to apply containers)
+        }
+        \only<5> {
+            \vfill \item<5-| alert@5> Hashicorp Vault (storing sensitive data)
+        }
+        \only<6> {
+            \vfill \item<6-| alert@6> s3 Bucket (used to store the terraform state file)
+        }
+    \end{itemize}
+    \vspace*{-.7cm}
+    \begin{center}
+        \item[] \includegraphics[width=1.0\textwidth]{../HLD/hldInfra}
+    \end{center}
+\end{frame}
+
+\begin{frame}{High Level Desighn Provisioning VMs}
+    \setbeamercovered{dynamic}%Makes the text appear before it presents nice!!!!
+    \vspace*{.5cm}
+    \begin{itemize}
+        \only<1> {
+            \vfill \item<1-| alert@1> Git / Azure DevOps VCS (where all code is stored)
+        }
+        \only<2> {
+            \vfill \item<2-| alert@2> Azure DevOps Server (triggerring infrastructure pipeline)
+        }
+        \only<3> {
+            \vfill \item<3-| alert@3> Bash / Ansible (triggering terraform)
+        }
+        \only<4> {
+            \vfill \item<4-| alert@4> Terraform (create VMs with custom configurations)
+        }
+        \only<5> {
+            \vfill \item<5-| alert@5> VMware (provisioning VMware to create n number of VMs)
+        }
+    \end{itemize}
+    \vspace*{-.65cm}
+    \begin{center}
+        \item[] \includegraphics[width=1.0\textwidth, height=.9\textheight]{../HLD/hldVm}
+    \end{center}
+\end{frame}

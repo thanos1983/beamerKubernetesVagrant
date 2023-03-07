@@ -1,0 +1,44 @@
+\section{Requirements}\label{sec:requirements}
+\subsection{How to accomplish requirements}\label{subsec:how-to-accomplish-requirements}
+
+\begin{frame}{Solution to problem}
+	\setbeamercovered{dynamic} %Makes the text appear before it presents nice!!!!
+	\begin{alertblock}{Problems}
+		\begin{itemize}
+			\item<1-| alert@1> Solution has to be reproducible locally \alert{Exactly as on premises}!
+			\item<2-| alert@2> \alert{Infrastructure As Code} Data should be persistent!
+			\item<3-| alert@3> \alert{Time consuming} custom configurations per VM!
+			\item<4-| alert@4> \item Minimal human interaction \alert{easy to use}!
+		\end{itemize}	
+	\end{alertblock}
+	\begin{exampleblock}{Solutions}
+		\begin{itemize}
+			\item<1-| alert@1> Introduce IAC elements to solve our problem!
+			\item<2-| alert@2> Fully \alert{automated procedure} on every step!
+			\item<3-| alert@3> \alert{ADO pipeline} either for Infrastructure or for provisioning VMs!
+			\item<4-| alert@4> \alert{Single file} containing all configurations for all VMs!
+		\end{itemize}	
+	\end{exampleblock}
+\end{frame}
+
+\subsection{The correct tool of choice}\label{subsec:the-correct-tool-of-choice}
+
+\begin{frame}{IAC}
+	\setbeamercovered{dynamic} %Makes the text appear before it presents nice!!!!
+	\begin{alertblock}{Possible Questions}
+		\begin{itemize}
+			\item<1-| alert@1> Why Ansible?
+			\item<2-| alert@2> Why Docker?
+			\item<3-| alert@3> Why Terraform?
+			\item<4-| alert@4> Why ADO pipelines?
+		\end{itemize}	
+	\end{alertblock}
+	\begin{exampleblock}{Possible Answers}
+		\begin{itemize}
+			\item<1-| alert@1> Written in Python 2/3 developed and maintained by RedHat!
+			\item<2-| alert@2> It gives the ability to control the environment and use persistent volumes!
+			\item<3-| alert@3> We can create infinite amount of VMs and keep track of configurations through state file!
+			\item<4-| alert@4> We wanted to use a dynamic tool that is easy to use.
+		\end{itemize}	
+	\end{exampleblock}
+\end{frame}

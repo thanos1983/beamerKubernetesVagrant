@@ -19,13 +19,14 @@
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \usetheme{Dresden} % so so
 \setbeamertemplate{page number in head/foot}[totalframenumber]
-\setbeamertemplate{navigation symbols}{} %take out the navigation symbols
-\setbeamertemplate{caption}[numbered] %enumerate the caption and tables
+\setbeamertemplate{navigation symbols}{} % take out the navigation symbols
+\setbeamertemplate{caption}[numbered] % enumerate the caption and tables
 \usefonttheme[stillsansseriflarge]{structureitalicserif}
-  
+\usepackage{capt-of} % captions of images in columns
+
 %\mode<handout>{\setbeamercolor{background canvas}{bg=black!5}} %For handouts.
 % \pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
-  
+
 %\makeatletter %reset the numbering on the subfigures (1)
 %\@addtoreset{subfigure}{figure} %reset the numbering on the subfigures (2)
 %\makeatother %reset the numbering on the subfigures (3)
@@ -33,25 +34,26 @@
 %For Large figures
 %\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{SMS}
 
-\title{Kubernetes Vagrant CI / CD} % (optional, only for long titles)
+\title{Provisioning VMware through terraform} % (optional, only for long titles)
 \subtitle{
-	\href{https://github.com/thanos1983/kubernetesVagrant}
-    		{GitHub Project Repo: kubernetesVagrant}
+    \href{https://github.com/thanos1983/pocVSphere}
+    {GitHub Project Repo: pocVSphere}
 }
-\author[Athanasios Garyfalos]{Sample of Work of fully automate build, deploy, validate containers locally. Deploy on a k8s cluster and validations.} % (optional, for multiple authors)
+
+\author[Athanasios Garyfalos]{Sample of work on how to provision VMs (Linux or Windows) on VMware through Terraform. \vspace{-.5cm}} % (optional, for multiple authors)
 % {A.~Garyfalos \and A.~Garyfalos2 \and A.~Garyfalos3}
 \institute[garyfalos@cpan.org] % (optional)
 {
-	\\
-	\medskip
-	{
-	% \emph{A.atga12@student.bth.se}
-	% \emph{Another Author email}
-	% \emph{Another Author}
-	}
+    \\
+    \medskip
+    {
+    % \emph{A.atga12@student.bth.se}
+    % \emph{Another Author email}
+    % \emph{Another Author}
+    }
 }
-\vspace*{-0.5cm}
-% \date{Date: \today} % Multi page content
+
+\date{Date: \today} % Multi page content
 % \subject{Sample of Work Demonstration Django Rest Framework}
 
 % \AtBeginSection[]{
@@ -62,22 +64,23 @@
 % }
 
 \AtBeginSubsection[]{
-  \begin{frame}<beamer>
-    \begin{multicols}{2}
-      \tableofcontents[currentsection,hideothersubsections]
-    \end{multicols}
-  \end{frame}
+    \begin{frame}
+        <beamer>
+        \begin{multicols}{2}
+            \tableofcontents[currentsection,hideothersubsections]
+        \end{multicols}
+    \end{frame}
 }
 
 \begin{document}
-	\input{./title/title.tex}
-	% \include{./copyRightDisclaimer/copyRightDisclaimer}
-	\include{./contents/contents}
-	\include{./introduction/introduction}
-	\include{./project_description/project_description}
-	\include{./project_implementation/project_implementation}
-	\include{./project_architecture/project_architecture}
-	\include{./demo/demo}
-	\include{./summary/summary}
-	\include{./bibliography/bibliography}
+%    \input{./title/title.tex}
+%    \include{./copyRightDisclaimer/copyRightDisclaimer}
+%    \include{./contents/contents}
+    \include{./elements/elements}
+ 	\include{./hld/hld}
+% 	\include{./project_implementation/project_implementation}
+% 	\include{./project_architecture/project_architecture}
+% 	\include{./demo/demo}
+% 	\include{./summary/summary}
+% 	\include{./bibliography/bibliography}
 \end{document}
